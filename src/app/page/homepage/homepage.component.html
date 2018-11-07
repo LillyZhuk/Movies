@@ -1,0 +1,51 @@
+<div class="toolbar">
+    <div class="logo">
+      <!--<div class="deathstar">-->
+        <!--<img src="../../../assets/Death-Star-SWCT.png" id="death-star">-->
+      <!--</div>-->
+      <div class="movies-logo">
+      <span>Movies</span>
+      </div>
+    </div>
+
+    <div class="menu">
+      <!--<select>-->
+        <!--<option>My Account</option>-->
+        <!--<option>My Favorite</option>-->
+      <!--</select>-->
+      <button mat-button [matMenuTriggerFor]="menu" class="menu-content"> My Account </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>My Favorite</button>
+      </mat-menu>
+    </div>
+</div>
+
+
+<div class="bla-bla">
+  <p>Latest Release</p>
+</div>
+
+<div class="movies-list">
+
+    <div *ngFor="let movie of movies">
+      <!--<p>{{movie.title}}</p>-->
+      <div>
+      <img id="poster" src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}">
+      </div>
+    </div>
+
+</div>
+
+<button (click)="showMovies()">
+  Show
+</button>
+
+
+<!--<div class="pagination">-->
+  <!--<ul>-->
+    <!--<li class="page" *ngFor="let p of pages; let i=index">-->
+      <!--<a class="nav-link" href="" (click)="setPage(i, $event)"-->
+      <!--[ngClass]="{'active':i==page}">{{i}}</a>-->
+    <!--</li>-->
+  <!--</ul>-->
+<!--</div>-->
