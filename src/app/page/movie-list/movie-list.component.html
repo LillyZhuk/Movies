@@ -28,10 +28,10 @@
 <div class="movies-list">
 
     <div *ngFor="let movie of movies">
-      <!--<p>{{movie.title}}</p>-->
-      <div>
-      <img id="poster" src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}">
-      </div>
+        <!--<p>{{movie.title}}</p>-->
+        <a [routerLink]="['/details', movie.id]">
+        <img id="poster" src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}">
+        </a>
     </div>
 
 </div>
@@ -41,11 +41,23 @@
 </button>
 
 
-<!--<div class="pagination">-->
-  <!--<ul>-->
-    <!--<li class="page" *ngFor="let p of pages; let i=index">-->
-      <!--<a class="nav-link" href="" (click)="setPage(i, $event)"-->
-      <!--[ngClass]="{'active':i==page}">{{i}}</a>-->
+<!--<div class="pagination-box">-->
+  <!--<ul class="pagination">-->
+
+    <!--<li><a href="#">Fist</a> </li>-->
+
+    <!--<li class="page-item"><a href="#" class="page-link">Prev</a> </li>-->
+
+    <!--<li class="page-item" *ngFor="let p of pages; let i=index">-->
+      <!--<a class="page-link" href="" (click)="setPage(i, $event)"-->
+      <!--[ngClass]="{'active':i==page}">{{i+1}}</a>-->
     <!--</li>-->
+
+    <!--<li class="page-item"><a href="#" class="page-link">Next</a></li>-->
+
+    <!--<li class="page-item"><a href="#" class="page-link">Last</a></li>-->
+
   <!--</ul>-->
 <!--</div>-->
+<!---->
+

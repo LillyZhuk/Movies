@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.mat-menu-panel {
+  background: #494e59 !important;
+  box-shadow: 0 0 1px rgb(255, 255, 255);
+}
+
+button.mat-menu-item {
+  color: #fff;
+  font-size: 18px;
+}

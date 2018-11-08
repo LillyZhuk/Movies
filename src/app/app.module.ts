@@ -6,18 +6,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import {HttpClientModule} from '@angular/common/http';
-import {MovieService} from './movie.service';
-import {HomepageComponent} from './page/homepage/homepage.component';
+import {MovieService} from './page/movie.service';
+import {MovieListComponent} from './page/movie-list/movie-list.component';
+import { MovieDetailComponent } from './page/movie-detail/movie-detail.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatSelectModule, MatMenuModule, MatGridListModule } from '@angular/material';
 
-import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent
+    MovieListComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -28,8 +29,7 @@ import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
     MatMenuModule,
     MatSelectModule,
     MatToolbarModule,
-    MatGridListModule,
-    NgbPaginationModule
+    MatGridListModule
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]
