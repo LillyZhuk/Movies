@@ -1,0 +1,21 @@
+<div class="toolbar">
+  <div class="logo">
+    <!--<div class="deathstar">-->
+    <!--<img src="../../../assets/Death-Star-SWCT.png" id="death-star">-->
+    <!--</div>-->
+    <div class="movies-logo">
+      <span>Movies</span>
+    </div>
+  </div>
+
+  <div class="menu">
+    <!--<select>-->
+    <!--<option>My Account</option>-->
+    <!--<option>My Favorite</option>-->
+    <!--</select>-->
+    <button mat-button [matMenuTriggerFor]="menu" class="menu-content"> My Account </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>My Favorite</button>
+    </mat-menu>
+  </div>
+</div>

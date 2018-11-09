@@ -17,7 +17,7 @@ export class MovieService {
   }
 
   getMovie(id: number) {
-    return this.http.get(this.baseUrl+id+'?api_key=ebea8cfca72fdff8d2624ad7bbf78e4c');
+    return this.http.get(this.baseUrl + id + '?api_key=ebea8cfca72fdff8d2624ad7bbf78e4c');
   }
 
 }

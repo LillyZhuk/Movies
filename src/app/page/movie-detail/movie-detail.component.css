@@ -1,0 +1,110 @@
+.content {
+  background: dimgrey;
+  height: 100vh;
+}
+
+.top-button {
+  display: flex;
+  justify-content: space-between;
+  padding: 3em 0.5em;
+;
+}
+
+.back,
+.next {
+  padding: 5px;
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-weight: 200;
+  font-size: 18px;
+}
+
+.right-arrow,
+.left-arrow {
+  width: 20px;
+  padding: 5%;
+}
+
+.info {
+  width: 65%;
+  /*display: flex;*/
+  /*flex-direction: column;*/
+}
+
+#poster {
+  box-shadow: 0 0 60px rgb(0, 0, 0);
+}
+
+.about-movie {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.add-favorite {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.add {
+  background: none;
+  padding: 8px;
+  font-size: 18px;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid white
+}
+
+h1 {
+  color: white;
+  padding: 10px 0;
+  font-weight: 500;
+  font-size: 50px;
+}
+
+h3 {
+  color: white;
+  font-size: 30px;
+}
+
+.text-info-fist {
+  display: grid;
+  flex-direction: row;
+  justify-content: space-around;
+  grid-column: 2 / 4;
+  grid-row: 3 / 4;
+  font-weight: 500;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+/*.vote-average {*/
+  /*padding-right: 2em;*/
+/*}*/
+
+/*.adult,*/
+/*.release-data {*/
+  /*padding: 0 2em;*/
+/*}*/
+
+/*.adult {*/
+  /*border-right: 1px solid rgba(255, 255, 255, 0.3);*/
+  /*border-left: 1px solid rgba(255, 255, 255, 0.3);*/
+/*}*/
+
+/*p {*/
+  /*color: #fff;*/
+  /*font-size: 20px;*/
+/*}*/
+
+/*.overview {*/
+  /*padding: 2em 0;*/
+  /*border-top: 1px solid rgba(255, 255, 255, 0.3);*/
+  /*border-bottom: 1px solid rgba(255, 255, 255, 0.3);*/
+/*}*/

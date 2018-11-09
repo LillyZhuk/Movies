@@ -15,7 +15,7 @@ export class MovieListComponent implements OnInit {
   // private movies: Array<any>;
   // private pages: Array<number>;
 
-  selectedMovie: Movie;
+  // selectedMovie: Movie;
 
   constructor(private movieService: MovieService) {}
 
@@ -49,8 +49,8 @@ export class MovieListComponent implements OnInit {
     console.log('Show', this.movies);
   }
 
-  onSelect(movie: Movie): void {
-    this.selectedMovie = movie;
-  }
+  // onSelect(movie: Movie): void {
+  //   this.selectedMovie = movie;
+  // }
 
 }

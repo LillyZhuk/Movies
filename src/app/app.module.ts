@@ -12,13 +12,15 @@ import { MovieDetailComponent } from './page/movie-detail/movie-detail.component
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatSelectModule, MatMenuModule, MatGridListModule } from '@angular/material';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieListComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
