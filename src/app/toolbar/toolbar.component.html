@@ -13,9 +13,9 @@
     <!--<option>My Account</option>-->
     <!--<option>My Favorite</option>-->
     <!--</select>-->
-    <button mat-button [matMenuTriggerFor]="menu" class="menu-content"> My Account </button>
+    <button mat-button [matMenuTriggerFor]="menu" class="menu-content" routerLink="/list" routerLinkActive="active-link"> My Account </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>My Favorite</button>
+      <button mat-menu-item  routerLink="/favorite" routerLinkActive="active-link">My Favorite</button>
     </mat-menu>
   </div>
 </div>

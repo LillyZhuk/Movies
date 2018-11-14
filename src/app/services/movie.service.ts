@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Movie} from './movies.model';
+import {Movie} from '../page/movies.model';
 import 'rxjs/add/operator/map';
 
 
@@ -13,12 +13,16 @@ export class MovieService {
   constructor(private http: HttpClient) { }
 
   getMovies() {
-    return this.http.get('http://api.themoviedb.org/3/movie/now_playing?api_key=ebea8cfca72fdff8d2624ad7bbf78e4c');
+    return this.http.get(this.baseUrl + 'now_playing?api_key=ebea8cfca72fdff8d2624ad7bbf78e4c');
   }
 
   getMovie(id: number) {
     return this.http.get(this.baseUrl + id + '?api_key=ebea8cfca72fdff8d2624ad7bbf78e4c');
   }
+
+  // getNextMovie(id: number): number {
+  //
+  // }
 
 }
 

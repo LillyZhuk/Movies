@@ -6,13 +6,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import {HttpClientModule} from '@angular/common/http';
-import {MovieService} from './page/movie.service';
+import {MovieService} from './services/movie.service';
 import {MovieListComponent} from './page/movie-list/movie-list.component';
 import { MovieDetailComponent } from './page/movie-detail/movie-detail.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatSelectModule, MatMenuModule, MatGridListModule } from '@angular/material';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { FavoriteComponent } from './page/favorite/favorite.component';
+import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
+
+import { StorageServiceModule } from 'ngx-webstorage-service';
+import { LocalstorageService } from './services/localstorage.service';
 
 
 @NgModule({
@@ -20,7 +25,9 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     AppComponent,
     MovieListComponent,
     MovieDetailComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    FavoriteComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -31,9 +38,10 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     MatMenuModule,
     MatSelectModule,
     MatToolbarModule,
-    MatGridListModule
+    MatGridListModule,
+    StorageServiceModule
   ],
-  providers: [MovieService],
+  providers: [MovieService, LocalstorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

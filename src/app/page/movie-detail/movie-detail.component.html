@@ -1,15 +1,18 @@
 
 
-<!--<div class="background-image"-->
-     <!--style="background-image : url('http://image.tmdb.org/t/p/{{movie.id}}/images?api_key=ebea8cfca72fdff8d2624ad7bbf78e4c&language=en-US');">-->
 
-<!--</div>-->
 
 <div class="content">
+
+  <div class="background">
+    <img id="background-image" src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}">
+  </div>
 
   <app-toolbar></app-toolbar>
 
   <div class="top-button">
+
+
 
     <button class="back" (click)="goBack()">
       <img class="left-arrow" src="../../../assets/leftArrow.png">
@@ -27,20 +30,21 @@
 
     <div class="image-poster">
       <div>
-        <img id="poster" src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}">
+        <img id="poster" src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}" alt="Movie poster.">
       </div>
+
     </div>
 
     <div class="info">
       <div class="add-favorite">
-        <button class="add">Add to favorite</button>
+        <button class="add" (click)="addMovieToFavorite()">Add to favorite</button>
       </div>
 
       <div class="title">
         <h1>{{movie.title}}</h1>
       </div>
 
-      <div class="text-info-fist">
+      <div class="text-info">
         <div class="vote-average">
           <h3> Score: {{movie.vote_average}} </h3>
         </div>

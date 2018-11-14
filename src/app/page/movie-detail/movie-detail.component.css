@@ -1,5 +1,5 @@
 .content {
-  background: dimgrey;
+  /*background: dimgrey;*/
   height: 100vh;
 }
 
@@ -65,6 +65,7 @@ h1 {
   padding: 10px 0;
   font-weight: 500;
   font-size: 50px;
+  margin-top: 1em;
 }
 
 h3 {
@@ -72,39 +73,45 @@ h3 {
   font-size: 30px;
 }
 
-.text-info-fist {
+.text-info {
   display: grid;
-  flex-direction: row;
-  justify-content: space-around;
-  grid-column: 2 / 4;
-  grid-row: 3 / 4;
-  font-weight: 500;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
+  grid-template-columns: 0.5fr 0.5fr 1.5fr;
 }
 
-/*.vote-average {*/
-  /*padding-right: 2em;*/
-/*}*/
 
-/*.adult,*/
-/*.release-data {*/
-  /*padding: 0 2em;*/
-/*}*/
+.adult {
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  padding-left: 2em;
+}
 
-/*.adult {*/
-  /*border-right: 1px solid rgba(255, 255, 255, 0.3);*/
-  /*border-left: 1px solid rgba(255, 255, 255, 0.3);*/
-/*}*/
+.release-data {
+  padding-left: 2em;
+}
 
-/*p {*/
-  /*color: #fff;*/
-  /*font-size: 20px;*/
-/*}*/
+.overview {
+  margin-top: 4em;
+  padding: 2em 0;
+  color: white;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
 
-/*.overview {*/
-  /*padding: 2em 0;*/
-  /*border-top: 1px solid rgba(255, 255, 255, 0.3);*/
-  /*border-bottom: 1px solid rgba(255, 255, 255, 0.3);*/
-/*}*/
+.background {
+  height: 100%;
+  background-position: center;
+  overflow: hidden;
+  background-size: cover;
+}
+
+#background-image {
+
+  position: absolute;
+  width: 104%;
+  filter: blur(10px);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+}

@@ -3,10 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MovieListComponent } from './page/movie-list/movie-list.component';
 import { MovieDetailComponent } from './page/movie-detail/movie-detail.component';
+import { FavoriteComponent } from './page/favorite/favorite.component';
+import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: '', component: MovieListComponent },
-  { path: 'details/:id', component: MovieDetailComponent }
+  { path: 'list', component: MovieListComponent },
+  { path: '', redirectTo: '/list ', pathMatch: 'full' },
+  { path: 'details/:id', component: MovieDetailComponent },
+  { path: 'favorite', component: FavoriteComponent },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
