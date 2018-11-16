@@ -6,12 +6,22 @@
   justify-content: space-between;
 }
 
+#death-star {
+  width: 50px;
+  margin-right: 10px;
+}
+
 .logo,
 .menu {
   display: flex;
   align-items: center;
   margin: 0 1.5em;
 }
+
+#arrow-down {
+  width: 20px;
+}
+
 
 span {
   font-family: Arial Narrow, sans-serif;
@@ -30,8 +40,6 @@ span {
   font-size: 20px;
   font-weight: 100;
   color: white;
+  display: flex;
 }
 
-strong {
-  transform: rotateY(90deg);
-}

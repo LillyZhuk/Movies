@@ -14,14 +14,14 @@ import { LocalstorageService } from '../../services/localstorage.service';
 })
 export class MovieDetailComponent implements OnInit {
   movie = new Movie();
-
+  addMovieToFavorite: boolean = true;
 
 
   constructor(
     private movieService: MovieService,
     private activeRoute: ActivatedRoute,
     private location: Location,
-    public localstorege: LocalstorageService) {
+    public localstorage: LocalstorageService) {
   }
 
   ngOnInit(): void {
@@ -38,8 +38,27 @@ export class MovieDetailComponent implements OnInit {
     this.location.back();
   }
 
-  addMovieToFavorite() {
-   this.localstorege.addMovie(this.movie);
+  addToFavorite() {
+   this.localstorage.addMovie(this.movie);
   }
+
+  deleteFromFavorite(movie: Movie) {
+    this.localstorage.deleteMovie(movie);
+  }
+
+  // toggleMovie(): void {
+  //   this.addMovieToFavorite = !this.addMovieToFavorite;
+  // }
+
+  // toggleEvent() {
+  //
+  //   this.addMovieToFavorite = !this.addMovieToFavorite;
+  //
+  //   if (this.addMovieToFavorite) {
+  //     this.addToFavorite();
+  //   } else {
+  //     this.deleteFromFavorite(this.movie);
+  //   }
+  // }
 
 }

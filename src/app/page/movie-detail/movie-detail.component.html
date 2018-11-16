@@ -1,71 +1,65 @@
-
-
-
-
 <div class="content">
 
   <div class="background">
     <img id="background-image" src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}">
   </div>
 
+  <div class="color"> </div>
+
   <app-toolbar></app-toolbar>
 
-  <div class="top-button">
+    <div class="top-button">
 
+      <button class="back" (click)="goBack()">
+        <img class="left-arrow" src="../../../assets/leftArrow.png">
+        Back to list
+      </button>
 
-
-    <button class="back" (click)="goBack()">
-      <img class="left-arrow" src="../../../assets/leftArrow.png">
-      Back to list
-    </button>
-
-    <button class="next">
-      Next Movie
-      <img class="right-arrow" src="../../../assets/rightArrow.png">
-    </button>
-
-  </div>
-
-  <div class="about-movie">
-
-    <div class="image-poster">
-      <div>
-        <img id="poster" src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}" alt="Movie poster.">
-      </div>
+      <button class="next">
+        Next Movie
+        <img class="right-arrow" src="../../../assets/rightArrow.png">
+      </button>
 
     </div>
 
-    <div class="info">
-      <div class="add-favorite">
-        <button class="add" (click)="addMovieToFavorite()">Add to favorite</button>
+    <div class="about-movie">
+
+      <div class="image-poster">
+          <img id="poster" src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}" alt="Movie poster.">
+
       </div>
 
-      <div class="title">
-        <h1>{{movie.title}}</h1>
-      </div>
-
-      <div class="text-info">
-        <div class="vote-average">
-          <h3> Score: {{movie.vote_average}} </h3>
+      <div class="info">
+        <div class="add-favorite">
+          <button class="btn" (click)="toggleEvent()">
+            {{addMovieToFavorite ? 'Add to favorite' : 'Unvaforite'}}
+          </button>
         </div>
 
-        <div class="adult">
-          <h3> Rating: {{movie.adult ? 'R' : 'PG'}} </h3>
+        <div class="title">
+          <h1>{{movie.title}}</h1>
         </div>
 
-        <div class="release-data">
-          <h3> Release Date: {{movie.release_date}} </h3>
+        <div class="text-info">
+          <div class="vote-average">
+            <h3> Score: {{movie.vote_average}} </h3>
+          </div>
+
+          <div class="adult">
+            <h3> Rating: {{movie.adult ? 'R' : 'PG'}} </h3>
+          </div>
+
+          <div class="release-data">
+            <h3> Release Date: {{movie.release_date}} </h3>
+          </div>
         </div>
-      </div>
 
-      <div class="overview">
-        <p> {{movie.overview}} </p>
-      </div>
+        <div class="overview">
+          <p> {{movie.overview}} </p>
+        </div>
 
+      </div>
     </div>
-  </div>
-
-
 
 </div>
 

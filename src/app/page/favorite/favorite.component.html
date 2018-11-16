@@ -1,1 +1,47 @@
-<app-toolbar></app-toolbar>
+
+<div class="content">
+  <app-toolbar></app-toolbar>
+
+  <div class="wrapper">
+
+      <div class="favorite">
+        <span>My favorite</span>
+      </div>
+
+      <div class="movie-list">
+        <div *ngFor="let movie of movies" id="favorite-movie">
+
+          <div></div>
+
+            <div class="movie-poster">
+              <img id="poster" src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}" alt="Movie poster.">
+            </div>
+
+            <div class="movie-info">
+
+              <div id="fist-row">
+              <div id="movie-title">
+                {{movie.title}}
+              </div>
+
+              <div>
+                <button (click)="delete(movie)">Unfavorite</button>
+              </div>
+
+            </div>
+
+              <div class="movie-description" id="second-row">
+                {{movie.overview}}
+              </div>
+            </div>
+
+          <div></div>
+        </div>
+      </div>
+
+  </div>
+
+</div>
+
+
+
