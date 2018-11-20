@@ -14,7 +14,8 @@
     <!--<option>My Favorite</option>-->
     <!--</select>-->
     <button mat-button [matMenuTriggerFor]="menu" class="menu-content" routerLink="/list" routerLinkActive="active-link">
-      My Account <img src="../../assets/baseline_keyboard_arrow_down_white_18dp.png" id="arrow-down">
+      <p>My Account</p>
+      <img src="../../assets/baseline_keyboard_arrow_down_white_18dp.png" id="arrow-down">
     </button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item  routerLink="/favorite" routerLinkActive="active-link">My Favorite</button>

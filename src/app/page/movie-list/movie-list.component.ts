@@ -14,7 +14,7 @@ export class MovieListComponent implements OnInit {
   // private page;
   // private movies: Array<any>;
   // private pages: Array<number>;
-
+  //
   // selectedMovie: Movie;
 
   constructor(private movieService: MovieService) {}

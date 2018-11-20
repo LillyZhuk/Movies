@@ -14,7 +14,7 @@ import { LocalstorageService } from '../../services/localstorage.service';
 })
 export class MovieDetailComponent implements OnInit {
   movie = new Movie();
-  addMovieToFavorite: boolean = true;
+  addMovieToFavorite: boolean = false;
 
 
   constructor(
@@ -50,15 +50,15 @@ export class MovieDetailComponent implements OnInit {
   //   this.addMovieToFavorite = !this.addMovieToFavorite;
   // }
 
-  // toggleEvent() {
-  //
-  //   this.addMovieToFavorite = !this.addMovieToFavorite;
-  //
-  //   if (this.addMovieToFavorite) {
-  //     this.addToFavorite();
-  //   } else {
-  //     this.deleteFromFavorite(this.movie);
-  //   }
-  // }
+  toggleEvent() {
+
+    this.addMovieToFavorite = !this.addMovieToFavorite;
+
+    if (this.addMovieToFavorite) {
+      this.addToFavorite();
+    } else {
+      this.deleteFromFavorite(this.movie);
+    }
+  }
 
 }

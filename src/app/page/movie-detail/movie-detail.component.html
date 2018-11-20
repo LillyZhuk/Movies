@@ -10,14 +10,14 @@
 
     <div class="top-button">
 
-      <button class="back" (click)="goBack()">
-        <img class="left-arrow" src="../../../assets/leftArrow.png">
-        Back to list
+      <button class="back-to-list" (click)="goBack()">
+        <img class="left-arrow" src="../../../assets/baseline_keyboard_arrow_left_white_18dp.png">
+        Back <span> to list</span>
       </button>
 
-      <button class="next">
-        Next Movie
-        <img class="right-arrow" src="../../../assets/rightArrow.png">
+      <button class="next-movie">
+        Next <span> Movie</span>
+        <img class="right-arrow" src="../../../assets/baseline_keyboard_arrow_right_white_18dp.png">
       </button>
 
     </div>
@@ -25,14 +25,21 @@
     <div class="about-movie">
 
       <div class="image-poster">
-          <img id="poster" src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}" alt="Movie poster.">
-
+        <img id="poster" src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}" alt="Movie poster.">
       </div>
 
       <div class="info">
         <div class="add-favorite">
           <button class="btn" (click)="toggleEvent()">
-            {{addMovieToFavorite ? 'Add to favorite' : 'Unvaforite'}}
+            <p class="btn-fav"> {{addMovieToFavorite ? 'Unvaforite' : 'Add to favorite'}} </p>
+            <div class="img-fav">
+              <div *ngIf="addMovieToFavorite; else elseBlock">
+                <img src="../../../assets/baseline_star_white_18dp.png">
+              </div>
+            <ng-template #elseBlock>
+              <img src="../../../assets/baseline_star_border_white_18dp.png">
+            </ng-template>
+           </div>
           </button>
         </div>
 
@@ -55,7 +62,7 @@
         </div>
 
         <div class="overview">
-          <p> {{movie.overview}} </p>
+          <p class="description"> {{movie.overview}} </p>
         </div>
 
       </div>

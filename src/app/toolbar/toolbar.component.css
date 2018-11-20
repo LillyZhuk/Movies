@@ -22,7 +22,6 @@
   width: 20px;
 }
 
-
 span {
   font-family: Arial Narrow, sans-serif;
   font-size: 24px;
@@ -41,5 +40,11 @@ span {
   font-weight: 100;
   color: white;
   display: flex;
+}
+
+@media screen and (max-width: 850px) {
+  p {
+    display: none;
+  }
 }
 

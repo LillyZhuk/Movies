@@ -15,18 +15,17 @@
 .top-button {
   display: flex;
   justify-content: space-between;
-  padding: 3em 0.5em;
+  padding: 5% 1%;
 }
 
-.back,
-.next {
+.back-to-list,
+.next-movie {
   padding: 5px;
   border: none;
   background: none;
   display: flex;
   align-items: center;
-  width: 10%;
-  display: flex;
+  width: 8%;
   justify-content: space-between;
   color: white;
   font-weight: 200;
@@ -41,7 +40,7 @@
 }
 
 .image-poster {
-  z-index: 3;
+  z-index: 4;
 }
 
 .info {
@@ -67,13 +66,18 @@
   justify-content: flex-end;
 }
 
+.img-fav {
+  display: none;
+}
+
 .btn {
   background: none;
-  padding: 8px;
+  padding: 1%;
   font-size: 18px;
   color: white;
   border-radius: 5px;
-  border: 1px solid white
+  border: 1px solid white;
+  width: 14%;
 }
 
 h1 {
@@ -81,7 +85,7 @@ h1 {
   padding: 10px 0;
   font-weight: 500;
   font-size: 50px;
-  margin-top: 1em;
+  margin: 5% 0 2% 0;
 }
 
 h3 {
@@ -98,16 +102,16 @@ h3 {
 .adult {
   border-right: 1px solid rgba(255, 255, 255, 0.3);
   border-left: 1px solid rgba(255, 255, 255, 0.3);
-  padding-left: 2em;
+  padding-left: 10%;
 }
 
 .release-data {
-  padding-left: 2em;
+  padding-left: 10%;
 }
 
 .overview {
-  margin-top: 4em;
-  padding: 2em 0;
+  margin-top: 4%;
+  padding: 3% 0;
   color: white;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -137,3 +141,48 @@ h3 {
   left: 0;
 
 }
+
+/*@media screen and (max-width: 1080px) {*/
+  /*#poster {*/
+    /*width: 300px;*/
+  /*}*/
+  /*.back-to-list,*/
+  /*.next-movie {*/
+    /*width: 14%;*/
+  /*}*/
+  /*.btn {*/
+    /*width: auto;*/
+  /*}*/
+/*}*/
+
+/*@media screen and (max-width: 850px) {*/
+  /*.back-to-list,*/
+  /*.next-movie {*/
+    /*width: 10%;*/
+  /*}*/
+
+  /*span {*/
+    /*display: none;*/
+  /*}*/
+
+  /*h1 {*/
+    /*font-size: 40px;*/
+    /*padding: 0;*/
+  /*}*/
+
+  /*h3 {*/
+    /*font-size: 22px;*/
+  /*}*/
+
+  /*.description {*/
+    /*font-size: 18px;*/
+  /*}*/
+
+  /*.btn-fav {*/
+    /*display: none;*/
+  /*}*/
+
+  /*.img-fav {*/
+    /*display: inline-flex;*/
+  /*}*/
+/*}*/
