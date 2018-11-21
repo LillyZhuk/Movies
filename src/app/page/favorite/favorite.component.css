@@ -21,7 +21,9 @@
   grid-template-columns: 20% 25% 35% 20%;
   padding: 2% 0;
 }
-
+.movie-info {
+  padding-left: 10%;
+}
 #fist-row {
   display: flex;
   justify-content: space-between;
@@ -29,15 +31,121 @@
 }
 
 #movie-title {
-  font-size: 26px;
   font-weight: 600;
+}
+
+h1 {
+  font-size: 40px;
 }
 
 button {
   font-size: 24px;
   padding: 3%;
-  background-color: #eaecef;
+  background: none;
   border: 1px solid;
   border-radius: 5px;
   color: #494e59;
+}
+
+@media screen and (max-width: 1366px) {
+  h1 {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  #favorite-movie {
+    grid-template-columns: 5% 40% 50% 5%;
+  }
+  .favorite {
+    padding-left: 5%;
+  }
+  #second-row {
+    max-height: 313px;
+    overflow: scroll;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  #fist-row {
+    flex-direction: column;
+  }
+  .movie-info {
+    padding-left: 15%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #poster {
+    width: 300px;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  p {
+    font-size: 20px;
+  }
+  #second-row {
+    max-height: 280px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  #poster {
+    width: 260px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  button {
+    font-size: 18px;
+  }
+  #second-row {
+    max-height: 232px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  span {
+    font-size: 20px;
+  }
+  h1 {
+    font-size: 18px;
+  }
+  button {
+    font-size: 15px;
+  }
+  #poster {
+    width: 180px;
+  }
+  p {
+    font-size: 14px;
+  }
+  #second-row {
+    max-height: 150px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  span {
+    font-size: 15px;
+  }
+  #poster {
+    width: 165px;
+  }
+  #second-row {
+    max-height: 140px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #poster {
+    width: 145px;
+  }
+  h1 {
+    font-size: 14px;
+  }
+  p {
+    font-size: 13px;
+  }
 }

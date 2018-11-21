@@ -46,10 +46,6 @@ export class MovieDetailComponent implements OnInit {
     this.localstorage.deleteMovie(movie);
   }
 
-  // toggleMovie(): void {
-  //   this.addMovieToFavorite = !this.addMovieToFavorite;
-  // }
-
   toggleEvent() {
 
     this.addMovieToFavorite = !this.addMovieToFavorite;
