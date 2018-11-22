@@ -14,8 +14,6 @@ export class MovieListComponent implements OnInit {
   // private page;
   // private movies: Array<any>;
   // private pages: Array<number>;
-  //
-  // selectedMovie: Movie;
 
   constructor(private movieService: MovieService) {}
 
@@ -29,27 +27,24 @@ export class MovieListComponent implements OnInit {
     this.getMovies();
   }
 
-  // getMovies() {
-  //   this.movieService.getMovies(this.page).subscribe(
-  //     data => {
-  //       this.movies = data['results'];
-  //       this.pages = new Array(data['total_pages']);
-  //     }
-  //   );
-  // }
-
-  private getMovies() {
+  getMovies() {
     this.movieService.getMovies()
-      .subscribe((response: any) => {
-        this.movies = response.results;
-      });
+      .subscribe(
+        data => {
+          this.movies = data['results'];
+        }
+      );
   }
+
+  // private getMovies() {
+  //   this.movieService.getMovies()
+  //     .subscribe((response: any) => {
+  //       this.movies = response.results;
+  //     });
+  // }
 
   private showMovies() {
     console.log('Show', this.movies);
   }
 
-  // onSelect(movie: Movie): void {
-  //   this.selectedMovie = movie;
-  // }
 }

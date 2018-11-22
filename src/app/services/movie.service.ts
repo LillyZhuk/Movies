@@ -1,14 +1,14 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Movie} from '../page/movies.model';
-import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs';
+import {map} from 'rxjs/operators';
 
 
 
 @Injectable()
 export class MovieService {
-   // movies: Movie[]
-   // movie: Movie;
+  private movies: Movie[] = [];
 
   private baseUrl: string = 'https://api.themoviedb.org/3/movie/'
 
