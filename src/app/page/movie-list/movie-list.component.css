@@ -23,6 +23,24 @@
   box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
 
+@media screen and (max-width: 575px) {
+  #poster {
+    width: 240px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  #poster {
+    width: 160px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  #poster {
+    width: 140px;
+  }
+}
+
 /* */
 /*.pagination {*/
   /*border-color: #494e59;*/

@@ -20,6 +20,9 @@ import { StorageServiceModule } from 'ngx-webstorage-service';
 import { LocalstorageService } from './services/localstorage.service';
 
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { PaginationComponent } from './pagination/pagination.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +30,8 @@ import { LocalstorageService } from './services/localstorage.service';
     MovieDetailComponent,
     ToolbarComponent,
     FavoriteComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    // PaginationComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,8 @@ import { LocalstorageService } from './services/localstorage.service';
     MatSelectModule,
     MatToolbarModule,
     MatGridListModule,
-    StorageServiceModule
+    StorageServiceModule,
+    NgbModule
   ],
   providers: [MovieService, LocalstorageService],
   bootstrap: [AppComponent]

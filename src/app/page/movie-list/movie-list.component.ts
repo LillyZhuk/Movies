@@ -52,5 +52,4 @@ export class MovieListComponent implements OnInit {
   // onSelect(movie: Movie): void {
   //   this.selectedMovie = movie;
   // }
-
 }
