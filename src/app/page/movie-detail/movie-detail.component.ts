@@ -14,23 +14,31 @@ import { LocalstorageService } from '../../services/localstorage.service';
 })
 export class MovieDetailComponent implements OnInit {
   movie = new Movie();
+  private id;
   addMovieToFavorite = false;
 
   constructor(
     private movieService: MovieService,
     private activeRoute: ActivatedRoute,
     private location: Location,
-    public localstorage: LocalstorageService) {}
+    public localstorage: LocalstorageService,
+    private router: Router) {
+  }
+
+  getNextMovie(id: number) {
+    let nextId = this.getNextMovie(id);
+    this.router.navigate([`/list/${nextId}`]);
+  }
 
   ngOnInit() {
     this.getMovie();
   }
 
-   getMovie(): void {
-     const id = +this.activeRoute.snapshot.paramMap.get('id');
-      this.movieService.getMovie(id)
-       .subscribe(movie => this.movie = movie);
-   }
+  getMovie(): void {
+    const id = +this.activeRoute.snapshot.paramMap.get('id');
+    this.movieService.getMovie(id)
+      .subscribe(movie => this.movie = movie);
+  }
 
   goBack(): void {
     this.location.back();

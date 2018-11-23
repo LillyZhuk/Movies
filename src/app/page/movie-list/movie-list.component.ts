@@ -8,33 +8,32 @@ import {Movie} from '../movies.model';
   styleUrls: ['./movie-list.component.css']
 })
 
-export class MovieListComponent implements OnInit {
-  private movies = [];
+export class MovieListComponent implements OnInit{
+  // private movies = [];
 
-  // private page;
-  // private movies: Array<any>;
-  // private pages: Array<number>;
+  private page;
+  private movies: Array<any>;
+  private pages: Array<number>;
 
-  constructor(private movieService: MovieService) {}
+  constructor(private movieService: MovieService) {
+  }
 
   // setPage(i, event: any) {
   //   event.preventDefault();
   //   this.page = i + 1;
-  //   this.getMovies();
+  //   this.getMovies(this.page);
   // }
 
   ngOnInit() {
-    this.getMovies();
+    this.movieService.getMovies().subscribe((movies) => {
+      console.log(movies);
+      this.movies = movies;
+    });
   }
 
-  getMovies() {
-    this.movieService.getMovies()
-      .subscribe(
-        data => {
-          this.movies = data['results'];
-        }
-      );
-  }
+  // getMovies() {
+  //   this.movieService.getMovies();
+  // }
 
   // private getMovies() {
   //   this.movieService.getMovies()
