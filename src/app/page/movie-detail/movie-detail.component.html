@@ -15,7 +15,7 @@
         Back <span> to list</span>
       </button>
 
-       <button class="next-movie" routerLinkActive="active" (click)="getNextMovie(movie.id)">
+       <button class="next-movie" [routerLink]="['/list', getNextMovie()]">
         Next <span> Movie</span>
         <img class="right-arrow" src="../../../assets/baseline_keyboard_arrow_right_white_18dp.png">
       </button>

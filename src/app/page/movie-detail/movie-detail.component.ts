@@ -6,6 +6,7 @@ import {Movie} from '../movies.model';
 import {MovieService} from '../../services/movie.service';
 
 import { LocalstorageService } from '../../services/localstorage.service';
+import {switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-movie-detail',
@@ -25,14 +26,19 @@ export class MovieDetailComponent implements OnInit {
     private router: Router) {
   }
 
-  getNextMovie(id: number) {
-    let nextId = this.getNextMovie(id);
-    this.router.navigate([`/list/${nextId}`]);
+  public getNextMovie() {
+   return this.movieService.getNextId(this.movie.id);
   }
 
   ngOnInit() {
     this.getMovie();
+    this.activeRoute.params.pipe(
+      switchMap((params) => {
+        return this.movieService.getMovie(+params.id);
+      })
+    ).subscribe(movie => this.movie = movie);
   }
+    
 
   getMovie(): void {
     const id = +this.activeRoute.snapshot.paramMap.get('id');

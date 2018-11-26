@@ -7,10 +7,9 @@ import { map } from 'rxjs/operators';
 
 @Injectable()
 export class MovieService {
-  private movies: Movie[] = [];
-  movie: Movie;
-  private locator = (p: Movie, id: number) => p.id === id;
-
+  // private movies: Movie[] = [];
+  public movie: Movie;
+  private movies: Movie[] = new Array<Movie>();
 
   private baseUrl: string = 'https://api.themoviedb.org/3/movie/now_playing?api_key=ebea8cfca72fdff8d2624ad7bbf78e4c';
 
@@ -23,14 +22,13 @@ export class MovieService {
   }
 
   getMovie(id: number): Observable<Movie> {
-    console.log(this.movies);
     return this.getMovies()
       .pipe(
         map(movies => movies.find(movie => movie.id === id)));
   }
 
   getNextId(id: number): number {
-    let index = this.movies.findIndex(p => this.locator(p, id));
+    let index = +this.movies.findIndex(movie => movie.id === id);
     if (index > -1) {
       return this.movies[this.movies.length > index + 2
         ? index + 1 : 0].id;
