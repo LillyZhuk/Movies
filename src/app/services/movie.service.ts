@@ -42,7 +42,10 @@ export class MovieService {
 
   // Getting a movie by ID from the server.
   getMovie(id: number): Observable<Movie> {
-   return this.http.get<Movie>(`${this.baseUrl}${id}?api_key=${this.apiKey}&language=en-US`);
+   return this.http.get<Movie>(`${this.baseUrl}${id}?api_key=${this.apiKey}&language=en-US`)
+    .pipe (
+      catchError((error: Response) => throwError(
+      `Network Error: ${error.statusText} (${error.status})`)));
   }
 
   // getNextId(id: number): number {
@@ -56,11 +59,5 @@ export class MovieService {
   //     return id || 0;
   //   }
   // }
-
-  // private handleError (error: Response | any) {
-  //   console.error(error.message || error);
-  //   return Observable.throw(error.message || error);
-  // }
-
 }
 
