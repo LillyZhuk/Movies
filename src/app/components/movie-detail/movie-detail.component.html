@@ -6,8 +6,6 @@
 
   <div class="color"> </div>
 
-  <app-toolbar></app-toolbar>
-
     <div class="top-button">
 
       <button class="back-to-list" (click)="goBack()">
@@ -15,7 +13,7 @@
         Back <span> to list</span>
       </button>
 
-       <button class="next-movie" [routerLink]="['/list', getNextMovie()]">
+       <button class="next-movie">
         Next <span> Movie</span>
         <img class="right-arrow" src="../../../assets/baseline_keyboard_arrow_right_white_18dp.png">
       </button>
@@ -25,7 +23,7 @@
     <div class="about-movie">
 
       <div class="image-poster">
-        <img id="poster" src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}" alt="Movie poster.">
+        <img id="poster" src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}" onerror="this.src='../../assets/lemur.jpg'" alt="Movie poster.">
       </div>
 
 
@@ -68,6 +66,7 @@
     </div>
 
 </div>
+
 
 
 

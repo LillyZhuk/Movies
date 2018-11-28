@@ -1,12 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
-
-import {Movie} from '../movies.model';
+import {Movie} from '../../models/movies.model';
 import {MovieService} from '../../services/movie.service';
-
 import { LocalstorageService } from '../../services/localstorage.service';
-import {switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-movie-detail',
@@ -23,33 +20,37 @@ export class MovieDetailComponent implements OnInit {
     private activeRoute: ActivatedRoute,
     private location: Location,
     public localstorage: LocalstorageService,
-    private router: Router) {
-  }
-
-  public getNextMovie() {
-   return this.movieService.getNextId(this.movie.id);
-  }
+    private router: Router
+    ) {}
 
   ngOnInit() {
     this.getMovie();
-    this.activeRoute.params.pipe(
-      switchMap((params) => {
-        return this.movieService.getMovie(+params.id);
-      })
-    ).subscribe(movie => this.movie = movie);
+    // this.activeRoute.params.pipe(
+    //   switchMap((params) => {
+    //     return this.movieService.getMovie(+params.id);
+    //   })
+    // ).subscribe(movie =>
+    //   this.movie = movie
+    //   );
   }
-    
+
+   // public getNextMovie() {
+  //  return this.movieService.getNextId(this.movie.id);
+  // }
 
   getMovie(): void {
     const id = +this.activeRoute.snapshot.paramMap.get('id');
     this.movieService.getMovie(id)
-      .subscribe(movie => this.movie = movie);
+   .subscribe(
+    movie => this.movie = movie
+    );
   }
 
   goBack(): void {
     this.location.back();
   }
 
+  //Work with the Localstorage
   addToFavorite() {
    this.localstorage.addMovie(this.movie);
   }
@@ -59,9 +60,7 @@ export class MovieDetailComponent implements OnInit {
   }
 
   toggleEvent() {
-
     this.addMovieToFavorite = !this.addMovieToFavorite;
-
     if (this.addMovieToFavorite) {
       this.addToFavorite();
     } else {

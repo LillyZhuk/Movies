@@ -1,0 +1,19 @@
+<div class="bla-bla">
+  <p>Latest Release</p>
+</div>
+
+<div class="movies-list">
+
+    <div *ngFor="let movie of movies">
+        <a [routerLink]="['/list', movie.id]">
+        <img id="poster" src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}" onerror="this.src='../../assets/lemur1.jpg'" alt="Movie poster.">
+        </a>
+    </div>
+
+</div>
+
+
+
+
+
+

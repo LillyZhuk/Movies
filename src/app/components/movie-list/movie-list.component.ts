@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MovieService} from '../../services/movie.service';
-import {Movie} from '../movies.model';
+import { Movie } from '../../models/movies.model';
+import { Page } from '../../models/page.model';
 
 @Component({
   selector: 'app-movie-list',
@@ -9,41 +10,38 @@ import {Movie} from '../movies.model';
 })
 
 export class MovieListComponent implements OnInit{
-  // private movies = [];
-
-  private page;
-  private movies: Array<any>;
+  private movies = [];
+  public page: number = 1;
+  public total_pages: number;
   private pages: Array<number>;
 
-  constructor(private movieService: MovieService) {
-  }
+  constructor(
+    private movieService: MovieService
+    ) {}
 
   // setPage(i, event: any) {
   //   event.preventDefault();
   //   this.page = i + 1;
-  //   this.getMovies(this.page);
+  //   this.getMovies();
   // }
 
   ngOnInit() {
-    this.movieService.getMovies().subscribe((movies) => {
+    this.getMovies();
+  }
+
+  getMovies() {
+    this.movieService.getMovies(this.page)
+    .subscribe((movies) => {
       console.log(movies);
-      this.movies = movies;
+      this.movies = movies['results'];
     });
   }
 
-  // getMovies() {
-  //   this.movieService.getMovies();
-  // }
-
   // private getMovies() {
-  //   this.movieService.getMovies()
+  //   this.movieService.getMovies(this.page)
   //     .subscribe((response: any) => {
   //       this.movies = response.results;
   //     });
   // }
-
-  private showMovies() {
-    console.log('Show', this.movies);
-  }
 
 }

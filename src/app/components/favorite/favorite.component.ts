@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { LocalstorageService } from '../../services/localstorage.service';
-import { Movie } from '../movies.model';
+import { Movie } from '../../models/movies.model';
 
 @Component({
   selector: 'app-favorite',

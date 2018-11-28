@@ -1,41 +1,66 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Movie} from '../page/movies.model';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-
+import {Movie} from '../models/movies.model';
+import { Observable, throwError } from 'rxjs';
+import { environment } from '../../environments/environment';
+import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class MovieService {
   // private movies: Movie[] = [];
+  public page;
   public movie: Movie;
   private movies: Movie[] = new Array<Movie>();
+  private baseUrl: string = environment.databaseURL;
+  private apiKey: string = environment.api_key;
 
-  private baseUrl: string = 'https://api.themoviedb.org/3/movie/now_playing?api_key=ebea8cfca72fdff8d2624ad7bbf78e4c';
+  constructor(
+    private http: HttpClient
+    ) {}
 
-  constructor(private http: HttpClient) { }
-
-  getMovies(): Observable<Movie[]> {
-    return this.http.get<Movie[]>(this.baseUrl)
-      .pipe(
-      map(res => res['results']));
+  getMovies(page: number): Observable<Movie[]> {
+    return this.http.get<Movie[]>(`${this.baseUrl}now_playing?api_key=${this.apiKey}&language=en-US&page=${page}`)
+    .pipe (
+      catchError((error: Response) => throwError(
+      `Network Error: ${error.statusText} (${error.status})`)));
+    // .pipe(
+    //   map(res => res['results']),
+    //   catchError(this.handleError));
   }
 
+  // getMovie(id: number): Observable<Movie> {
+  //   return this.getMovies(this.page)
+  //     .pipe(
+  //       map(movies => movies.find(movie => movie.id === id)));
+  // }
+
+  // Getting by using the find method, but it doesn't work in component
+  // getMovie(id: number): Movie {
+  //   console.log(id, this.movies,'id')
+  //   return this.movies.find(movie => movie.id === id);
+  // }
+
+  // Getting a movie by ID from the server.
   getMovie(id: number): Observable<Movie> {
-    return this.getMovies()
-      .pipe(
-        map(movies => movies.find(movie => movie.id === id)));
+   return this.http.get<Movie>(`${this.baseUrl}${id}?api_key=${this.apiKey}&language=en-US`);
   }
 
-  getNextId(id: number): number {
-    let index = +this.movies.findIndex(movie => movie.id === id);
-    if (index > -1) {
-      return this.movies[this.movies.length > index + 2
-        ? index + 1 : 0].id;
-    } else {
-      return id || 0;
-    }
-  }
+  // getNextId(id: number): number {
+  //   console.log(this.movies)
+  //   let index = +this.movies.findIndex(movie => movie.id === id);
+  //   console.log(index, id, '555');
+  //   if (index > -1) {
+  //     return this.movies[this.movies.length > index + 2
+  //       ? index + 1 : 0].id;
+  //   } else {
+  //     return id || 0;
+  //   }
+  // }
+
+  // private handleError (error: Response | any) {
+  //   console.error(error.message || error);
+  //   return Observable.throw(error.message || error);
+  // }
 
 }
 

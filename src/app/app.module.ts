@@ -7,21 +7,20 @@ import { AppComponent } from './app.component';
 
 import {HttpClientModule} from '@angular/common/http';
 import {MovieService} from './services/movie.service';
-import {MovieListComponent} from './page/movie-list/movie-list.component';
-import { MovieDetailComponent } from './page/movie-detail/movie-detail.component';
+import {MovieListComponent} from './components/movie-list/movie-list.component';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { FavoriteComponent } from './components/favorite/favorite.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule, MatSelectModule, MatMenuModule, MatGridListModule } from '@angular/material';
-import { ToolbarComponent } from './toolbar/toolbar.component';
-import { FavoriteComponent } from './page/favorite/favorite.component';
-import { PageNotFoundComponent } from './page/page-not-found/page-not-found.component';
+import { MatMenuModule } from '@angular/material';
+  import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+  import {NgxPaginationModule} from 'ngx-pagination';
 
 import { StorageServiceModule } from 'ngx-webstorage-service';
 import { LocalstorageService } from './services/localstorage.service';
-
-
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-// import { PaginationComponent } from './pagination/pagination.component';
+import { MessageModule } from './error/message.module';
 
 @NgModule({
   declarations: [
@@ -30,8 +29,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MovieDetailComponent,
     ToolbarComponent,
     FavoriteComponent,
-    PageNotFoundComponent,
-    // PaginationComponent
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -40,11 +38,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     BrowserAnimationsModule,
     MatMenuModule,
-    MatSelectModule,
-    MatToolbarModule,
-    MatGridListModule,
     StorageServiceModule,
-    NgbModule
+    // NgbModule,
+    MessageModule,
+    // NgxPaginationModule,
+    
   ],
   providers: [MovieService, LocalstorageService],
   bootstrap: [AppComponent]
