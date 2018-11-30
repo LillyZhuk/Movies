@@ -14,9 +14,9 @@ import { FavoriteComponent } from './components/favorite/favorite.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatMenuModule } from '@angular/material';
-  import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-  import {NgxPaginationModule} from 'ngx-pagination';
+import { MatMenuModule, MatPaginatorModule } from '@angular/material';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { StorageServiceModule } from 'ngx-webstorage-service';
 import { LocalstorageService } from './services/localstorage.service';
@@ -39,9 +39,10 @@ import { MessageModule } from './error/message.module';
     BrowserAnimationsModule,
     MatMenuModule,
     StorageServiceModule,
-    // NgbModule,
+    NgbModule,
     MessageModule,
-    // NgxPaginationModule,
+    NgxPaginationModule,
+    MatPaginatorModule
     
   ],
   providers: [MovieService, LocalstorageService],

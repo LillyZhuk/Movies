@@ -4,15 +4,29 @@
 
 <div class="movies-list">
 
-    <div *ngFor="let movie of movies">
+    <div *ngFor="let movie of movies | paginate: { itemsPerPage: 20, currentPage: page, id: 'some_id', totalItems: pages };">
         <a [routerLink]="['/list', movie.id]">
         <img id="poster" src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}" onerror="this.src='../../assets/lemur1.jpg'" alt="Movie poster.">
         </a>
     </div>
 
+    <div class="pager">
+        <pagination-controls 
+            (pageChange) = "page = getMovies($event)" 
+            id="some_id"
+            maxSize = "7"
+            directionLinks = "true"
+            autohide = "true">
+</pagination-controls>
+    </div>
+
 </div>
 
 
+
+
+
+ 
 
 
 

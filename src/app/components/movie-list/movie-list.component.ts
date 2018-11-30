@@ -12,29 +12,27 @@ import { Page } from '../../models/page.model';
 export class MovieListComponent implements OnInit{
   private movies = [];
   public page: number = 1;
-  public total_pages: number;
   private pages: Array<number>;
+  public total_results: number;
+  
 
   constructor(
     private movieService: MovieService
     ) {}
 
-  // setPage(i, event: any) {
-  //   event.preventDefault();
-  //   this.page = i + 1;
-  //   this.getMovies();
-  // }
-
   ngOnInit() {
-    this.getMovies();
+    this.getMovies(1);
   }
 
-  getMovies() {
-    this.movieService.getMovies(this.page)
+  getMovies(event) {
+    console.log(this.page, 'comp',event);
+    this.movieService.getMovies(event)
     .subscribe((movies) => {
       console.log(movies);
       this.movies = movies['results'];
+      this.pages = movies['total_results'];
     });
+    return event;
   }
 
   // private getMovies() {

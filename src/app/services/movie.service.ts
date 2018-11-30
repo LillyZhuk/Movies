@@ -19,6 +19,7 @@ export class MovieService {
     ) {}
 
   getMovies(page: number): Observable<Movie[]> {
+    console.log(page, 'page');
     return this.http.get<Movie[]>(`${this.baseUrl}now_playing?api_key=${this.apiKey}&language=en-US&page=${page}`)
     .pipe (
       catchError((error: Response) => throwError(
