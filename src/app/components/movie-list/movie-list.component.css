@@ -21,8 +21,8 @@
   box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
 
-.ngx-pagination .current {
-  background: #47b498;
+.pager {
+  text-align: center;
 }
 
 @media screen and (max-width: 575px) {
