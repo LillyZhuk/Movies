@@ -25,6 +25,12 @@
   text-align: center;
 }
 
+@media screen and (max-width: 1366px) {
+  #poster {
+    width: 280px;
+  }
+}
+
 @media screen and (max-width: 575px) {
   #poster {
     width: 240px;

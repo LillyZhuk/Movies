@@ -161,6 +161,23 @@ h3 {
 }
 
 @media screen and (max-width: 1366px) {
+  .color,
+  .background {
+    top: 3em;
+  }
+  .top-button {
+    padding: 2%;
+  }
+  h1 {
+    font-size: 45px;
+    padding: 1% 0;
+  }
+  h3 {
+    font-size: 35px;
+  }
+  #poster {
+    width: 280px;
+  }
   span {
     display: none;
   }
@@ -175,6 +192,10 @@ h3 {
   }
   .release-data {
     padding-left: 20%;
+  }
+  .overview {
+    margin-top: 2%;
+    padding: 1% 0;
   }
 }
 
@@ -257,10 +278,7 @@ h3 {
 }
 
 @media screen and (max-width: 525px) {
-  .color,
-  .background {
-    top: 3em;
-  }
+  
   .top-button {
     margin: 0 3%;
   }

@@ -48,6 +48,19 @@ span {
   display: flex;
 }
 
+@media screen and (max-width: 1366px) {
+  .toolbar {
+    height: 3em;
+  }
+  #death-star {
+    width: 35px;
+    margin-right: 8px;
+  }
+  .menu-content {
+    padding: 6px 6px;
+  }
+}
+
 @media screen and (max-width: 850px) {
   p {
     display: none;

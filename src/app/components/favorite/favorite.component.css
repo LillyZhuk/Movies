@@ -51,6 +51,10 @@ button {
   h1 {
     font-size: 35px;
   }
+  .movie-description {
+    max-height: 330px;
+    overflow: scroll;
+  }
 }
 
 @media screen and (max-width: 1080px) {
