@@ -25,18 +25,8 @@ export class MovieDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getMovie();
-    // this.activeRoute.params.pipe(
-    //   switchMap((params) => {
-    //     return this.movieService.getMovie(+params.id);
-    //   })
-    // ).subscribe(movie =>
-    //   this.movie = movie
-    //   );
-  }
 
-   // public getNextMovie() {
-  //  return this.movieService.getNextId(this.movie.id);
-  // }
+  }
 
   getMovie(): void {
     const id = +this.activeRoute.snapshot.paramMap.get('id');
@@ -55,8 +45,8 @@ export class MovieDetailComponent implements OnInit {
    this.localstorage.addMovie(this.movie);
   }
 
-  deleteFromFavorite(movie: Movie) {
-    this.localstorage.deleteMovie(movie);
+  deleteFromFavorite() {
+    this.localstorage.deleteMovie(this.movie);
   }
 
   toggleEvent() {
@@ -64,7 +54,7 @@ export class MovieDetailComponent implements OnInit {
     if (this.addMovieToFavorite) {
       this.addToFavorite();
     } else {
-      this.deleteFromFavorite(this.movie);
+      this.deleteFromFavorite();
     }
   }
 

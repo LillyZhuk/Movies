@@ -16,22 +16,29 @@ export class LocalstorageService {
     if (localStorage.getItem('movies') === null) {
       return this.movies;
     } else {
-      this.movies = JSON.parse(localStorage.getItem('movies'));
-      return this.movies;
+      return this.movies = JSON.parse(localStorage.getItem('movies'));
     }
   }
 
-  addMovie(movie: Movie) {
+  // addMovie(movie: Movie) {
+  //   this.movies.push(movie);
+  //   let movies: Movie[] = [];
+  //   if (localStorage.getItem('movies') === null) {
+  //     movies.push(movie);
+  //     localStorage.setItem('movies', JSON.stringify(movies));
+  //   } else {
+  //     movies = JSON.parse(localStorage.getItem('movies'));
+  //     movies.push(movie);
+  //     localStorage.setItem('movies', JSON.stringify(movies));
+  //   }
+  // }
+
+  addMovie(movie: Movie): void {
     this.movies.push(movie);
     let movies: Movie[] = [];
-    if (localStorage.getItem('movies') === null) {
-      movies.push(movie);
-      localStorage.setItem('movies', JSON.stringify(movies));
-    } else {
-      movies = JSON.parse(localStorage.getItem('movies'));
-      movies.push(movie);
-      localStorage.setItem('movies', JSON.stringify(movies));
-    }
+    movies = JSON.parse(localStorage.getItem('movies'));
+    movies.push(movie);
+    localStorage.setItem('movies', JSON.stringify(movies));
   }
 
   deleteMovie(movie: Movie) {

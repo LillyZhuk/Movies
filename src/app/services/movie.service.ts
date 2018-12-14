@@ -7,10 +7,9 @@ import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class MovieService {
-  // private movies: Movie[] = [];
-  public page;
+  public page: number;
   public movie: Movie;
-  private movies: Movie[] = new Array<Movie>();
+  private movies: Movie[] = [];
   private baseUrl: string = environment.databaseURL;
   private apiKey: string = environment.api_key;
 
@@ -24,22 +23,7 @@ export class MovieService {
     .pipe (
       catchError((error: Response) => throwError(
       `Network Error: ${error.statusText} (${error.status})`)));
-    // .pipe(
-    //   map(res => res['results']),
-    //   catchError(this.handleError));
   }
-
-  // getMovie(id: number): Observable<Movie> {
-  //   return this.getMovies(this.page)
-  //     .pipe(
-  //       map(movies => movies.find(movie => movie.id === id)));
-  // }
-
-  // Getting by using the find method, but it doesn't work in component
-  // getMovie(id: number): Movie {
-  //   console.log(id, this.movies,'id')
-  //   return this.movies.find(movie => movie.id === id);
-  // }
 
   // Getting a movie by ID from the server.
   getMovie(id: number): Observable<Movie> {
@@ -48,17 +32,4 @@ export class MovieService {
       catchError((error: Response) => throwError(
       `Network Error: ${error.statusText} (${error.status})`)));
   }
-
-  // getNextId(id: number): number {
-  //   console.log(this.movies)
-  //   let index = +this.movies.findIndex(movie => movie.id === id);
-  //   console.log(index, id, '555');
-  //   if (index > -1) {
-  //     return this.movies[this.movies.length > index + 2
-  //       ? index + 1 : 0].id;
-  //   } else {
-  //     return id || 0;
-  //   }
-  // }
 }
-
