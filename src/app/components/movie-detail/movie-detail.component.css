@@ -150,7 +150,7 @@ h3 {
 #background-image {
   position: absolute;
   width: 104%;
-  filter: blur(10px);
+  filter: blur(15px);
   top: 0;
   bottom: 0;
   right: 0;
@@ -161,6 +161,9 @@ h3 {
   .color,
   .background {
     top: 3em;
+  }
+  #background-image {
+    width: 150%;
   }
   .top-button {
     padding: 2%;
