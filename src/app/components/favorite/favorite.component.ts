@@ -19,5 +19,6 @@ export class FavoriteComponent implements OnInit {
 
   delete(movie: Movie) {
     this.localstorage.deleteMovie(movie);
+    this.movies = this.localstorage.getMovies();
   }
 }
