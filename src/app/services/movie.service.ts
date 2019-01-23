@@ -9,6 +9,7 @@ import { catchError } from 'rxjs/operators';
 export class MovieService {
   public page: number;
   public movie: Movie;
+  public title: string;
   private movies: Movie[] = [];
   private baseUrl: string = environment.databaseURL;
   private apiKey: string = environment.api_key;
@@ -31,4 +32,5 @@ export class MovieService {
       catchError((error: Response) => throwError(
       `Network Error: ${error.statusText} (${error.status})`)));
   }
+
 }

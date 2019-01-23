@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LocalstorageService } from '../../services/localstorage.service';
 import { Movie } from '../../models/movies.model';
 
@@ -9,7 +9,7 @@ import { Movie } from '../../models/movies.model';
 })
 export class FavoriteComponent implements OnInit {
 
- movies: Movie[];
+  movies: Movie[];
 
   constructor(public localstorage: LocalstorageService) { }
 

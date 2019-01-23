@@ -1,0 +1,33 @@
+<div class="search-movie">
+  <div class="search-input">
+      <input placeholder="Start type movie title" class="search-input"
+      [(ngModel)]="title" (ngModelChange)="searchMovieByTitle()">
+  </div>
+</div>
+
+<div class="result-search" *ngIf="isLoaded">
+  <div class="list-card">
+    <div class="card" *ngFor="let movie of movies">
+        <mat-card >
+          <mat-card-header>
+            <mat-card-title>{{movie.title}}</mat-card-title>
+          </mat-card-header>
+        <mat-card-content>
+        <img id="poster"
+          src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}"
+          onerror="this.src='../../assets/lemur1.jpg'"> 
+          <ul class="brief-info">
+              <li>Release data: {{movie.release_date}}</li>
+              <li>Vote Average: {{movie.vote_average}}</li>
+          </ul>
+        </mat-card-content>
+          <mat-card-actions class="center">
+              <a target="_blank" mat-raised-button [routerLink]="['/list', movie.id]">
+                View Movie
+              </a>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+  </div>
+</div> 
+

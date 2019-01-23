@@ -14,7 +14,7 @@ export class MovieListComponent implements OnInit{
   public page: number = 1;
   private pages: Array<number>;
   public total_results: number;
-  
+
 
   constructor(
     private movieService: MovieService
@@ -25,21 +25,12 @@ export class MovieListComponent implements OnInit{
   }
 
   getMovies(event) {
-    console.log(this.page, 'comp',event);
     this.movieService.getMovies(event)
     .subscribe((movies) => {
-      console.log(movies);
       this.movies = movies['results'];
       this.pages = movies['total_results'];
     });
     return event;
   }
-
-  // private getMovies() {
-  //   this.movieService.getMovies(this.page)
-  //     .subscribe((response: any) => {
-  //       this.movies = response.results;
-  //     });
-  // }
 
 }

@@ -25,7 +25,7 @@ button {
 }
 
 #arrow-down {
-  width: 20px;
+  display: none;
 }
 
 span {
@@ -35,7 +35,6 @@ span {
 }
 
 /* select */
-
 .menu-content{
   background: none;
   border: none;
@@ -45,7 +44,7 @@ span {
   font-size: 20px;
   font-weight: 100;
   color: white;
-  display: flex;
+  /* display: flex; */
 }
 
 @media screen and (max-width: 1366px) {
@@ -65,6 +64,10 @@ span {
   p {
     display: none;
   }
+  #arrow-down {
+    width: 20px;
+    display: initial;
+  }
 }
 
 @media screen and (max-width: 525px) {
@@ -82,4 +85,3 @@ span {
     padding: 6px 6px;
   }
 }
-

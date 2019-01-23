@@ -1,0 +1,36 @@
+input {
+    border: none;
+    background: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    height: 24px;
+    font-size: 22px;
+}
+
+.search-movie {
+    margin: 2%;
+}
+
+.search-input {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.list-card {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+#poster {
+    width: 324px;
+    height: 486px;
+}
+
+.brief-info {
+    margin: 3%;
+}

@@ -21,7 +21,7 @@ export class MovieDetailComponent implements OnInit {
     private location: Location,
     public localstorage: LocalstorageService,
     private router: Router
-    ) {}
+  ) {}
 
   ngOnInit() {
     this.getMovie();
@@ -31,18 +31,18 @@ export class MovieDetailComponent implements OnInit {
   getMovie(): void {
     const id = +this.activeRoute.snapshot.paramMap.get('id');
     this.movieService.getMovie(id)
-   .subscribe(
-    movie => this.movie = movie
-    );
+      .subscribe(
+        movie => this.movie = movie
+      );
   }
 
   goBack(): void {
     this.location.back();
   }
 
-  //Work with the Localstorage
+  // Work with the Localstorage
   addToFavorite() {
-   this.localstorage.addMovie(this.movie);
+    this.localstorage.addMovie(this.movie);
   }
 
   deleteFromFavorite() {

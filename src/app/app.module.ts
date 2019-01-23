@@ -14,13 +14,15 @@ import { FavoriteComponent } from './components/favorite/favorite.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatMenuModule, MatPaginatorModule } from '@angular/material';
+import { MatMenuModule, MatCardModule, MatButtonModule } from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {NgxPaginationModule} from 'ngx-pagination';
 
 import { StorageServiceModule } from 'ngx-webstorage-service';
 import { LocalstorageService } from './services/localstorage.service';
 import { MessageModule } from './error/message.module';
+import { SearchComponent } from './components/search/search.component';
+import { SearchService } from './services/search.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { MessageModule } from './error/message.module';
     MovieDetailComponent,
     ToolbarComponent,
     FavoriteComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -42,10 +45,10 @@ import { MessageModule } from './error/message.module';
     NgbModule,
     MessageModule,
     NgxPaginationModule,
-    MatPaginatorModule
-    
+    MatCardModule,
+    MatButtonModule
   ],
-  providers: [MovieService, LocalstorageService],
+  providers: [MovieService, LocalstorageService, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
