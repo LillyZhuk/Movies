@@ -9,10 +9,14 @@
   font-size: 24px;
 }
 
-.movies-list {
+#picture {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
+}
+
+div#picture:hover figure:not(:hover) {
+	opacity: 0.4;
 }
 
 #poster {

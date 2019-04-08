@@ -3,7 +3,7 @@
 </div>
 
 <div class="main-page">
-    <div class="movies-list">
+    <div id="picture" class="movies-list" >
 
         <div *ngFor="let movie of movies | paginate: { itemsPerPage: 20, currentPage: page, id: 'some_id', totalItems: pages };">
             <a [routerLink]="['/list', movie.id]">
